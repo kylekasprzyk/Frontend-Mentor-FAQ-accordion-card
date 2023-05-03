@@ -1,0 +1,344 @@
+/* self-hosting google fonts for better performance */
+@font-face {
+    font-family: 'Kumbh';
+    font-weight: 400;
+    src: url('./assets/fonts/kumbhsans-regular-webfont.woff2') format('woff2'),
+        url('./assets/fonts/kumbhsans-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Kumbh-bold';
+    font-weight: 700;
+    src: url('./assets/fonts/kumbhsans-bold-webfont.woff2') format('woff2'),
+        url('./assets/fonts/kumbhsans-bold-webfont.woff') format('woff');
+}
+
+:root {
+    /* colors */
+    --very-dark-desaturated-blue: 238 29% 16%;
+    --soft-red: 14 88% 65%;
+    --very-dark-grayish-blue: 237 12% 33%;
+    --dark-grayish-blue: 240 6% 50%;
+    --light-grayish-blue: 240 5% 91%;
+    --rich-lilac: 273 75% 66%;
+    --majorelle-blue: 240 73% 65%;
+    --white: 0 0% 100%;
+
+    /* font-sizes */
+    --fs-11px: .6875rem;
+    --fs-12px: .75rem;
+    --fs-13px: .8125rem;
+    --fs-14px: .875rem;
+
+    /* font-family */
+    font-family: 'Kumbh', sans-serif;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* reset start */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(180deg, hsl(var(--rich-lilac)) 0%, hsl(var(--majorelle-blue)) 100%);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input {
+    font: inherit;
+}
+
+p,
+h1 {
+    overflow-wrap: break-word;
+}
+
+/* reset end */
+
+.card {
+    background-color: hsl(var(--white));
+    box-shadow: 0rem 3.125rem 3.125rem -1.25rem rgba(53, 18, 122, 0.497159);
+    border-radius: 1.4375rem;
+    width: 20.4375rem;
+    margin-top: 9.25rem;
+}
+
+.accordion {
+    position: relative;
+    display: grid;
+    padding: 1.75rem 1.5rem 3rem 1.5rem;
+    max-width: 21.875rem;
+    gap: 1.0625rem;
+}
+
+.illustration {
+    position: relative;
+    height: 11.25rem;
+    width: 14.8125rem;
+    left: 2.8125rem;
+    top: -6.6875rem;
+    margin-bottom: -3.25rem;
+    animation: page-load-down 1000ms ease-in-out;
+}
+
+.illustration img {
+    margin-top: 2.5rem;
+    margin-bottom: -7rem;
+}
+
+.background-shadow-image {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Kumbh-bold';
+    text-align: center;
+}
+
+.accordion-label,
+.accordion-content {
+    padding: 0;
+}
+
+.accordion-label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition: 100ms;
+    font-size: var(--fs-13px);
+    line-height: 1rem;
+    color: hsl(var(--very-dark-grayish-blue));
+}
+
+.accordion-label:hover {
+    color: hsl(var(--soft-red));
+}
+
+.accordion-label::after {
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    height: .375rem;
+    width: .625rem;
+    left: 16.9375rem;
+    background-image: url(./assets/images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    transition: transform 400ms;
+    margin-top: .375rem;
+}
+
+.accordion-content {
+    font-size: var(--fs-12px);
+    line-height: 1.125rem;
+    color: hsl(var(--dark-grayish-blue));
+    display: none;
+}
+
+.accordion-content p {
+    padding-top: .75rem;
+    padding-right: 2.5rem;
+}
+
+.accordion-input {
+    display: none;
+}
+
+.accordion-input:checked~.accordion-content {
+    display: block;
+}
+
+.accordion-input:checked~.accordion-label::after {
+    transform: translateY(-50%) rotate(0.5turn);
+}
+
+.accordion-input:checked~.accordion-label {
+    font-family: 'Kumbh-bold';
+    font-size: var(--fs-13px);
+    line-height: 1rem;
+    color: hsl(var(--very-dark-desaturated-blue));
+}
+
+.accordion div {
+    max-width: 21.875rem;
+}
+
+hr {
+    background-color: hsl(var(--light-grayish-blue));
+    height: .0625rem;
+    border: none;
+}
+
+.attribution {
+    font-size: var(--fs-11px);
+    text-align: center;
+    color: hsl(var(--white));
+}
+
+.attribution a {
+    color: hsl(var(--soft-red));
+}
+
+.desktop-box {
+    display: none;
+}
+
+@media screen and (min-width:1000px) {
+    main {
+        margin-left: 2.5625rem;
+    }
+
+    .card {
+        width: 57.5rem;
+        height: 31.8125rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 8.0625rem;
+        overflow: hidden;
+    }
+
+    h1 {
+        text-align: left;
+        padding-top: 3.8125rem;
+        padding-left: .1875rem;
+    }
+
+    .accordion {
+        padding: 2.125rem 1.5rem 3rem .3125rem;
+        gap: 1rem;
+    }
+
+    .accordion-label {
+        font-size: var(--fs-14px);
+        line-height: 1.0625rem;
+        color: hsl(var(--very-dark-grayish-blue));
+        letter-spacing: .0031rem;
+    }
+
+    .accordion-label::after {
+        left: 20.125rem;
+    }
+
+    .accordion p {
+        font-size: var(--fs-12px);
+        line-height: 1.125rem;
+        color: hsl(var(--dark-grayish-blue));
+        padding-top: .6875rem;
+        padding-right: 0rem;
+    }
+
+    .accordion-input:checked~.accordion-label {
+        font-size: var(--fs-14px);
+    }
+
+    .desktop-box {
+        display: block;
+        margin-bottom: -21.5rem;
+        z-index: 2;
+        position: relative;
+        left: -5.8125rem;
+        top: 10.8125rem;
+        margin-top: 10rem;
+        animation: spinAround 1500ms ease-in-out;
+    }
+
+    .illustration {
+        animation: page-load-left 1500ms ease-in-out;
+        height: 22.4375rem;
+        width: 29.5rem;
+        left: -5.1875rem;
+        top: 1.875rem;
+    }
+
+    .illustration img {
+        margin-bottom: -21.875rem;
+    }
+
+    .main-illustration {
+        z-index: 1;
+        position: relative;
+    }
+
+    .background-shadow-image {
+        position: relative;
+        height: 59rem;
+        width: 60.25rem;
+        left: -30.75rem;
+        top: -25.8125rem;
+        display: block;
+    }
+
+    hr {
+        width: 21.875rem;
+    }
+}
+
+/* animation */
+@keyframes page-load-down {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    65% {
+        transform: translateY(25%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes page-load-left {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes spinAround {
+    0% {
+        transform: translateY(-200%) rotate(-180deg) scale(.2);
+    }
+
+    100% {
+        transform: translate(0) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
