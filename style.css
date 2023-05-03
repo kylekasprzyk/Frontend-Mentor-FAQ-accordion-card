@@ -1,18 +1,3 @@
-/* self-hosting google fonts for better performance */
-@font-face {
-    font-family: 'Kumbh';
-    font-weight: 400;
-    src: url('./assets/fonts/kumbhsans-regular-webfont.woff2') format('woff2'),
-        url('./assets/fonts/kumbhsans-regular-webfont.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Kumbh-bold';
-    font-weight: 700;
-    src: url('./assets/fonts/kumbhsans-bold-webfont.woff2') format('woff2'),
-        url('./assets/fonts/kumbhsans-bold-webfont.woff') format('woff');
-}
-
 :root {
     /* colors */
     --very-dark-desaturated-blue: 238 29% 16%;
@@ -29,9 +14,10 @@
     --fs-12px: .75rem;
     --fs-13px: .8125rem;
     --fs-14px: .875rem;
+    --fs-32px: 2rem;
 
     /* font-family */
-    font-family: 'Kumbh', sans-serif;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 /* remove animations for people who've turned them off */
@@ -126,7 +112,9 @@ h1 {
 }
 
 h1 {
-    font-family: 'Kumbh-bold';
+    font-weight: 700;
+    font-size: var(--fs-32px);
+    line-height: 2.5rem;
     text-align: center;
 }
 
@@ -187,7 +175,7 @@ h1 {
 }
 
 .accordion-input:checked~.accordion-label {
-    font-family: 'Kumbh-bold';
+    font-weight: 700;
     font-size: var(--fs-13px);
     line-height: 1rem;
     color: hsl(var(--very-dark-desaturated-blue));
