@@ -6,7 +6,7 @@
     <a href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam"><strong>Frontend Mentor Challenge</strong></a>
   </h2>
   <p>
-    <a href="#">My Solution</a>
+    <a href="https://kylekasprzyk.github.io/Frontend-Mentor-FAQ-accordion-card/">My Solution</a>
   </p>
 </div>
 
@@ -42,7 +42,7 @@ This is a solution to the [FAQ accordion card challenge on Frontend Mentor](http
 ## Links
 
 - [Solution URL](#)
-- [Live Site URL](#)
+- [Live Site URL](https://kylekasprzyk.github.io/Frontend-Mentor-FAQ-accordion-card/)
 
 ## Built with
 
