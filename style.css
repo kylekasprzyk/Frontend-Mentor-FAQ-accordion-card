@@ -261,6 +261,7 @@ hr {
         left: -5.8125rem;
         top: 10.8125rem;
         margin-top: 10rem;
+        filter: drop-shadow(0 .8125rem .9375rem rgba(0, 0, 0, .3));
         animation: spinAround 1500ms ease-in-out;
     }
 
